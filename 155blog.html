@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="155blog.css">
+    <title>правильное питание</title>
+</head>
+<body>
+    <header>
+        <div id="logo" onclick="slowScroll('#top')">
+            <span>ITPROgRer</span>
+        </div>
+        <div id="about">
+            <a href="#" title="vozmojnosti" onclick="slowScroll('#main')">vozmojnosti</a>
+            <a href="#" onclick="slowScroll('#overview')" title="preemushestvo">preemushestvo</a>
+            <a href="#" onclick="slowScroll('#contacts')" title="konkacts">kontacts</a>
+            <a href="#" onclick="slowScroll('#faq')" title="otveti na voprosi">FAQ</a>
+        </div>
+    </header>
+
+    <div id="top">
+        <h1>программирование</h1>
+        <h3>как способ жизни!</h3>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        function slowScroll(id) {
+            $('html, body').animate({
+               scrollTop: $(id).offset().top
+            }, 500);
+        }
+
+        $(document).on("scroll", function () {
+          if ($(window).scrollTop() === 0)
+            $("header").removeClass("fixed");
+        else
+            $("header").attr("class", "fixed");
+        });
+    </script>
+</body>
+</html>
